@@ -20,45 +20,71 @@
           );
           if (!title || !title.parentElement) return;
 
-          const info = document.createElement('div');
-          info.setAttribute('data-khazan-extra-info', 'true');
-          info.style.cssText = [
-            'display:flex',
-            'flex-wrap:wrap',
-            'gap:8px',
-            'margin-top:14px',
-            'margin-bottom:4px',
-            title.parentElement.className.includes('items-end') ? 'justify-content:flex-end' : 'justify-content:flex-start'
-          ].join(';');
+          const parent = title.parentElement;
+          const alignRight = parent.className.includes('items-end');
+          const specBadge = Array.from(parent.querySelectorAll('span')).find((element) =>
+            element.textContent.trim().includes('PC(STEAM)')
+          );
+          const companyText = Array.from(parent.querySelectorAll('span')).find((element) =>
+            element.textContent.trim() === 'Neople'
+          );
 
-          const createBadge = (text) => {
-            const badge = document.createElement('span');
-            badge.textContent = text;
-            badge.style.cssText = [
+          const role = document.createElement(companyText ? companyText.tagName.toLowerCase() : 'span');
+          role.setAttribute('data-khazan-extra-info', 'true');
+          role.textContent = 'Level / Combat Design';
+          if (companyText) {
+            role.className = companyText.className;
+            role.style.cssText = companyText.getAttribute('style') || '';
+          } else {
+            role.style.cssText = [
+              'display:block',
+              'font-family:serif',
+              'font-style:italic',
+              'font-size:12px',
+              'font-weight:500',
+              'color:#94a3b8',
+              'margin-bottom:8px'
+            ].join(';');
+          }
+
+          const live = document.createElement(specBadge ? specBadge.tagName.toLowerCase() : 'span');
+          live.setAttribute('data-khazan-extra-info', 'true');
+          live.textContent = 'CBT / Live Service';
+          if (specBadge) {
+            live.className = specBadge.className;
+            live.style.cssText = specBadge.getAttribute('style') || '';
+          } else {
+            live.style.cssText = [
               'display:inline-flex',
               'align-items:center',
-              'border:1px solid rgba(37,99,235,0.18)',
-              'background:rgba(239,246,255,0.95)',
-              'color:#2563eb',
-              'border-radius:999px',
-              'padding:6px 10px',
+              'background:#f8fafc',
+              'border:1px solid #f1f5f9',
+              'border-radius:8px',
+              'padding:8px 14px',
               'font-size:11px',
               'font-weight:800',
-              'letter-spacing:0.16em',
+              'letter-spacing:0.2em',
               'text-transform:uppercase',
+              'color:#94a3b8',
               'line-height:1'
             ].join(';');
-            return badge;
-          };
+          }
 
-          info.appendChild(createBadge('CBT / Live Service'));
-          info.appendChild(createBadge('Level / Combat Design'));
-
-          const description = Array.from(title.parentElement.querySelectorAll('p')).pop();
-          if (description) {
-            description.insertAdjacentElement('afterend', info);
+          if (companyText) {
+            companyText.insertAdjacentElement('afterend', role);
           } else {
-            title.insertAdjacentElement('afterend', info);
+            title.insertAdjacentElement('beforebegin', role);
+          }
+
+          if (specBadge) {
+            specBadge.insertAdjacentElement('afterend', live);
+          } else {
+            title.insertAdjacentElement('afterend', live);
+          }
+
+          if (alignRight) {
+            role.style.textAlign = 'right';
+            live.style.alignSelf = 'flex-end';
           }
         };
 
