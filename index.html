@@ -9,5 +9,66 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (() => {
+        const addKhazanHistoryInfo = () => {
+          const historyItem = document.getElementById('history-item-1');
+          if (!historyItem || historyItem.querySelector('[data-khazan-extra-info="true"]')) return;
+
+          const title = Array.from(historyItem.querySelectorAll('h4, h5')).find((element) =>
+            element.textContent.trim().includes('The First Khazan')
+          );
+          if (!title || !title.parentElement) return;
+
+          const info = document.createElement('div');
+          info.setAttribute('data-khazan-extra-info', 'true');
+          info.style.cssText = [
+            'display:flex',
+            'flex-wrap:wrap',
+            'gap:8px',
+            'margin-top:14px',
+            'margin-bottom:4px',
+            title.parentElement.className.includes('items-end') ? 'justify-content:flex-end' : 'justify-content:flex-start'
+          ].join(';');
+
+          const createBadge = (text) => {
+            const badge = document.createElement('span');
+            badge.textContent = text;
+            badge.style.cssText = [
+              'display:inline-flex',
+              'align-items:center',
+              'border:1px solid rgba(37,99,235,0.18)',
+              'background:rgba(239,246,255,0.95)',
+              'color:#2563eb',
+              'border-radius:999px',
+              'padding:6px 10px',
+              'font-size:11px',
+              'font-weight:800',
+              'letter-spacing:0.16em',
+              'text-transform:uppercase',
+              'line-height:1'
+            ].join(';');
+            return badge;
+          };
+
+          info.appendChild(createBadge('CBT / Live Service'));
+          info.appendChild(createBadge('Level / Combat Design'));
+
+          const description = Array.from(title.parentElement.querySelectorAll('p')).pop();
+          if (description) {
+            description.insertAdjacentElement('afterend', info);
+          } else {
+            title.insertAdjacentElement('afterend', info);
+          }
+        };
+
+        window.addEventListener('DOMContentLoaded', addKhazanHistoryInfo);
+        window.addEventListener('load', addKhazanHistoryInfo);
+
+        const root = document.getElementById('root') || document.body;
+        const observer = new MutationObserver(addKhazanHistoryInfo);
+        observer.observe(root, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>
