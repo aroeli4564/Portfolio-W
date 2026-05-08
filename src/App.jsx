@@ -14,12 +14,70 @@ const MENU_ITEMS = [
 ];
 
 const HISTORY_ITEMS = [
-  { id: 1, project: "The First Khazan", period: "2022.07 — Present", company: "Neople", spec: "PC(Steam) / Action RPG / UE4", desc: "하드코어 액션 RPG의 핵심 전투 시스템 및 보스 패턴 기획. 글로벌 스팀 서비스에 맞춘 조작감 및 피드백 최적화 담당.", image: "https://github.com/aroeli4564/aroeli/blob/main/78cf326a8cceaed3f4a807fe9e3f811abdfb5df96fe0cd06.jpg?raw=true" },
-  { id: 2, project: "The Vanshee", period: "2020.04 — 2022.06", company: "Pixel Cruise", spec: "PC / Action RPG / UE4", desc: "고퀄리티 PC 액션 RPG 프로젝트에서 심리스 월드 레벨 설계 및 전투 루프 전반 담당.", image: "https://github.com/aroeli4564/aroeli/blob/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-04-25%20022003.png?raw=true" },
-  { id: 3, project: "Arisia Chronicle", period: "2019.01 — 2019.07", company: "Supreme Games", spec: "Open World RPG / Unity", desc: "오픈월드 환경의 핵심 시스템 구조와 유저 성장 동선을 정의하는 작업을 수행했습니다.", image: "https://github.com/aroeli4564/aroeli/blob/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-04-25%20022409.png?raw=true" },
-  { id: 4, project: "Triumph Over Pain", period: "2015.12 — 2019.07", company: "Supreme Games", spec: "Mobile / Action RPG / Unity", desc: "모바일 환경의 액션성을 극대화한 레벨 설계와 장기 서비스를 위한 콘텐츠 밸런싱 담당.", image: "https://github.com/aroeli4564/aroeli/blob/main/TOPcb.jpg?raw=true" },
-  { id: 5, project: "KRITIKA", period: "2013.01 — 2015.08", company: "Allm", spec: "PC / Action RPG / Custom Engine", desc: "초고속 액션 쾌감을 극대화한 보스 패턴 기획 및 지형 활용 전투 구역 설계.", image: "https://github.com/aroeli4564/aroeli/blob/main/3d59c25a0e31813deb76549f20f47c37.jpg?raw=true" },
-  { id: 6, project: "Howling Sword", period: "2012.05 — 2012.11", company: "Estsoft", spec: "PC / Action RPG / Custom Engine", desc: "북미 시장 최적화 리메이크 과정에서 조작 인터페이스와 전투 연출 로직 재기획.", image: "https://github.com/aroeli4564/aroeli/blob/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-04-25%20020319.png?raw=true" }
+  { 
+    id: 1, 
+    project: "The First Khazan", 
+    period: "2022.7 ~ 2026.4", 
+    company: "Neople", 
+    spec: "  PC(Steam) / Action RPG / UE4", 
+    service: "Development / Live Service / China Launch Preparation",
+    desc: "  하드코어 액션 RPG로 다크소울3와 비슷한 레벨 디자인. 그 외 컨텐츠 디자인.",
+    role: "Level Design / Content Design",
+    image: "https://raw.githubusercontent.com/aroeli4564/aroeli/main/tmp_4d80c94c-5905-4005-adb5-d72df8d06493.jpeg" 
+  },
+  { 
+    id: 2, 
+    project: "The Vanshee", 
+    period: "2020.4 ~ 2022.5", 
+    company: "Pixel Cruise", 
+    spec: "PC / Action RPG / UE4", 
+    desc: "",
+    role: "Level Design / Combat Design / Content Design",
+    image: "https://github.com/aroeli4564/aroeli/blob/main/tmp_426ca492-1d5c-44b0-bd4e-1149845b5d9d.jpeg?raw=true" 
+  },
+  { 
+    id: 3, 
+    project: "Arisia Chronicle", 
+    period: "2019.1 ~ 2019.7", 
+    company: "Supreme Games", 
+    spec: "Open World RPG / Unity", 
+    service: "Prototype Development",
+    desc: "",
+    role: "Game Design",
+    image: "https://raw.githubusercontent.com/aroeli4564/aroeli/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-04-25%20022409.png" 
+  },
+  { 
+    id: 4, 
+    project: "Triumph Over Pain", 
+    period: "2013.1 ~ 2015.8", 
+    company: "Supreme Games", 
+    spec: "Mobile / Action RPG / Unity", 
+    service: "Development / Live Service",
+    desc: "",
+    role: "Level Design / Combat Design / Content Design",
+    image: "https://raw.githubusercontent.com/aroeli4564/aroeli/main/TOPcb.jpg" 
+  },
+  { 
+    id: 5, 
+    project: "KRITIKA", 
+    period: "2013.1 ~ 2015.8", 
+    company: "Allm", 
+    spec: "PC / Action RPG / Custom Engine", 
+    service: "Development / Live Service",
+    desc: "",
+    role: "Level Design / Combat Design",
+    image: "https://raw.githubusercontent.com/aroeli4564/aroeli/main/3d59c25a0e31813deb76549f20f47c37.jpg" 
+  },
+  { 
+    id: 6, 
+    project: "Howling Sword", 
+    period: "2012.05 — 2012.11", 
+    company: "Estsoft", 
+    spec: "PC / Action RPG / Custom Engine", 
+    desc: "북미 시장 최적화 리메이크 과정에서 조작 인터페이스와 전투 연출 로직 재기획.", 
+    role: "Level Design / Combat Design",
+    image: "https://raw.githubusercontent.com/aroeli4564/aroeli/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-04-25%20020319.png" 
+  }
 ];
 
 const DESIGN_DATA = {
@@ -119,6 +177,68 @@ const SectionFooter = memo(({ index, total }) => (
     </div>
   </div>
 ));
+
+const HistoryTextBlock = memo(({ item, align = 'left' }) => {
+  const isRight = align === 'right';
+  const justify = isRight ? 'justify-end' : 'justify-start';
+  const textAlign = isRight ? 'text-right' : 'text-left';
+  const contentIndent = isRight ? 'mr-[15px]' : 'ml-[15px]';
+  const borderSide = isRight ? 'border-r pr-[13px]' : 'border-l pl-[13px]';
+  const scaleOrigin = isRight ? 'origin-top-right' : 'origin-top-left';
+  const displayPeriod = item.id === 6 ? '2012.05 ~ 2012.11' : item.period;
+  const displaySpec = item.id === 1 ? 'PC(Steam) / Action RPG / UE4' : item.spec?.trim();
+  const displayScope = item.service || 'Development';
+
+  return (
+    <div
+      className={`w-[468px] max-w-none text-black ${textAlign}`}
+      style={{ fontFamily: '"Century Schoolbook", "Century Schoolbook L", Georgia, serif' }}
+    >
+      <div className={`relative z-20 flex h-[16px] items-center gap-3 mb-[34px] whitespace-nowrap ${justify}`}>
+        {displayPeriod && (
+          <span className="font-sans text-slate-500 font-bold text-[12px] tracking-[0.2em] uppercase leading-[16px]">
+            {displayPeriod}
+          </span>
+        )}
+        {item.company && <span className="h-[16px] border-l border-[#9a9a9a]"></span>}
+        {item.company && <span className="text-[15px] leading-[16px] italic font-light text-[#777777]">{item.company}</span>}
+      </div>
+
+      <div className={`${scaleOrigin} scale-75`}>
+        {item.project && (
+          <h4 className="font-light text-black text-[52px] leading-[0.82] tracking-normal whitespace-nowrap mb-[15px]">
+            {item.project}
+          </h4>
+        )}
+        {displaySpec && (
+          <p className={`${contentIndent} text-[17px] leading-none italic font-light text-[#6f6f6f] whitespace-nowrap mb-[31px]`}>
+            {displaySpec}
+          </p>
+        )}
+
+        <div className={`${contentIndent} font-sans`}>
+          {displayScope && (
+            <div className="mb-[27px]">
+              <h5 className="mb-[9px] text-[21px] leading-none font-normal text-[#6f6f6f]">Project Scope</h5>
+              <p className={`${borderSide} border-[#777777] text-[18px] leading-none font-light text-[#435f86] whitespace-nowrap`}>
+                {displayScope}
+              </p>
+            </div>
+          )}
+
+          {item.role && (
+            <div>
+              <h5 className="mb-[9px] text-[21px] leading-none font-normal text-[#6f6f6f]">Responsibilities</h5>
+              <p className={`${borderSide} border-[#777777] text-[18px] leading-none font-light text-[#435f86] whitespace-nowrap`}>
+                {item.role}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+});
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -294,11 +414,48 @@ const App = () => {
               background-size: 32px 32px;
             }
 
-            /* --- 디자인 섹션 핵심 수치 정의 --- */
             :root {
               --tab-height: 80px;
               --tab-width: 250px;
-              --tabs-gap: 90px; /* 추천하신 90px 적용 */
+              --tabs-gap: 90px;
+            }
+
+            .design-layout-root {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+              padding-top: 10px;
+            }
+
+            .design-tabs-container {
+              display: flex;
+              align-items: flex-end;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              max-width: 950px;
+              margin: 0 auto;
+              position: relative;
+              z-index: 50;
+              margin-bottom: -1px;
+            }
+
+            .custom-tab-btn {
+              width: var(--tab-width);
+              height: var(--tab-height);
+              flex: 0 0 var(--tab-width);
+              transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            .tab-active-mask {
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -1px;
+              height: 3px;
+              background: white;
+              z-index: 52;
             }
           `}
         </style>
@@ -342,7 +499,15 @@ const App = () => {
                         <div className="bg-white border border-slate-100 rounded-[3rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
                           <div className="flex flex-col items-start w-full">
                             <div className="w-full aspect-[4/5] bg-[#ebf0f5]/50 rounded-[2rem] flex flex-col items-center justify-center mb-8 relative group overflow-hidden">
-                              <img src="https://cdn.newsworks.co.kr/news/photo/202002/433057_327801_345.jpg" alt="Designer Profile" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/400x500/ebf0f5/94a3b8?text=NO+IMAGE"; }} />
+                              <img
+                                src="https://cdn.newsworks.co.kr/news/photo/202002/433057_327801_345.jpg"
+                                alt="Designer Profile"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                onError={(e) => {
+                                  e.currentTarget.onerror = null;
+                                  e.currentTarget.src = "https://via.placeholder.com/400x500/ebf0f5/94a3b8?text=NO+IMAGE";
+                                }}
+                              />
                             </div>
                             <div className="w-full space-y-6 text-left">
                               <div className="space-y-1">
@@ -405,11 +570,10 @@ const App = () => {
             <section className="h-full w-full flex flex-col pt-24 md:pt-28 overflow-hidden">
               <div ref={historyScrollRef} className="flex-grow overflow-y-auto scrollbar-hide scroll-smooth flex flex-col">
                 <div className="flex-grow px-8 md:px-12 lg:px-16">
-                  <div className={`max-w-[1300px] mx-auto pb-24 pt-8 md:pt-12 ${currentSection === 1 ? 'animate-reveal' : ''}`}>
+                  <div className={`max-w-[1300px] mx-auto pb-24 pt-12 ${currentSection === 1 ? 'animate-reveal' : ''}`}>
                     <div className="text-center space-y-4 mb-16">
-                       <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">— Experience Timeline —</span>
-                       <h3 className="text-4xl md:text-5xl font-light text-slate-900 uppercase tracking-widest leading-none">History</h3>
-                       <p className="text-slate-400 text-[14px] mt-4 font-medium max-w-xl mx-auto">기획의 깊이를 더해온 지난 시간들의 기록입니다.</p>
+                       <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">Experience Timeline</span>
+                       <h3 className="text-5xl font-light text-slate-900 uppercase tracking-widest leading-none whitespace-nowrap">History</h3>
                     </div>
                     <div className="max-w-[1000px] mx-auto mb-32 hidden md:block px-4 mt-8">
                       <div className="relative flex justify-between items-start w-full">
@@ -433,50 +597,33 @@ const App = () => {
                         ))}
                       </div>
                     </div>
-                    <div className="relative max-w-[800px] mx-auto px-4 mt-12 md:mt-24">
-                      <div className="absolute left-[35px] md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-px bg-slate-200"></div>
+                    <div className="relative max-w-[1000px] mx-auto px-4 mt-16">
+                      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-px bg-slate-200"></div>
                       {HISTORY_ITEMS.map((item, idx) => {
                         const isEven = idx % 2 === 0;
                         return (
-                          <div id={`history-item-${item.id}`} key={item.id} className="relative flex flex-col md:flex-row items-start w-full mb-16 md:mb-24 group">
-                            <div className="md:hidden absolute left-[35px] transform -translate-x-1/2 top-0 z-10 flex items-center justify-center w-8 h-8 bg-white">
-                              <div className="w-2.5 h-2.5 border-2 border-slate-200 bg-white rounded-full group-hover:border-blue-500 transition-colors"></div>
-                            </div>
-                            <div className={`w-full md:w-1/2 pl-[70px] md:pl-0 md:pr-12 relative ${!isEven ? 'order-2 md:order-1 mt-8 md:mt-0' : ''}`}>
+                          <div id={`history-item-${item.id}`} key={item.id} className="relative flex flex-row items-start w-full mb-24 group">
+                            <div className={`absolute top-[24px] h-px w-12 bg-slate-300 group-hover:bg-blue-200 transition-colors duration-500 z-10 ${isEven ? 'left-1/2' : 'right-1/2'}`}></div>
+                            <div className="absolute left-1/2 top-[19px] -translate-x-1/2 w-2.5 h-2.5 border-2 border-slate-300 bg-white rounded-full group-hover:border-blue-500 transition-colors duration-500 z-20"></div>
+                            <div className={`w-1/2 pl-0 pr-12 relative ${!isEven ? 'order-1 mt-0' : ''}`}>
                               {isEven ? (
-                                <div className="w-full aspect-[4/3] bg-white border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] overflow-hidden relative group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-700 z-10 flex items-center justify-center p-2">
-                                  {item.image ? <img src={item.image} alt={item.project} className="w-full h-full object-contain transition-transform duration-700" /> : <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg"><ImageIcon size={40} className="text-slate-300 opacity-30 group-hover:text-blue-500 group-hover:opacity-100 transition-colors duration-500" /></div>}
+                                <div className="w-full aspect-[16/9] bg-white border border-slate-200 shadow-[0_12px_34px_rgba(15,23,42,0.08)] overflow-hidden relative group-hover:border-blue-200 group-hover:shadow-[0_22px_48px_rgba(15,23,42,0.14)] group-hover:-translate-y-2 transition-all duration-700 z-10 flex items-center justify-center p-2">
+                                  {item.image ? <img src={item.image} alt={item.project} className={`w-full h-full transition-transform duration-700 ${item.id === 6 ? 'object-cover object-top' : 'object-contain'}`} /> : <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg"><ImageIcon size={40} className="text-slate-300 opacity-30 group-hover:text-blue-500 group-hover:opacity-100 transition-colors duration-500" /></div>}
                                 </div>
                               ) : (
-                                <div className="flex flex-col items-start md:items-end md:text-right pt-2 md:pt-4 w-full min-w-0">
-                                  <div className="relative flex items-center w-full justify-start md:justify-end mb-4 md:mb-5">
-                                    <div className="hidden md:block absolute right-[-48px] w-10 h-px bg-slate-300 group-hover:bg-blue-500 transition-colors duration-500"></div>
-                                    <div className="hidden md:block absolute right-[-53px] w-2.5 h-2.5 border-2 border-slate-300 bg-white rounded-full group-hover:border-blue-500 transition-colors duration-500 z-10"></div>
-                                    <span className="text-slate-500 font-bold text-[11px] md:text-[12px] tracking-[0.2em] uppercase">{item.period}</span>
-                                  </div>
-                                  <span className="text-[11px] md:text-[12px] font-medium text-slate-400 italic mb-2 block font-serif">{item.company}</span>
-                                  <h4 className={`font-light uppercase text-slate-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full ${item.project.length > 14 ? 'text-xl md:text-2xl lg:text-3xl tracking-wider' : 'text-2xl md:text-3xl lg:text-4xl tracking-widest'}`}>{item.project}</h4>
-                                  <div className="mb-4 md:mb-5 md:ml-auto"><span className="text-[8.5px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] inline-block bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100/50">{item.spec}</span></div>
-                                  <p className="text-[13px] md:text-[14px] text-slate-500 leading-relaxed font-medium max-w-[320px]">{item.desc}</p>
+                                <div className="flex flex-col items-end text-right pt-4 w-full min-w-0">
+                                  <HistoryTextBlock item={item} align="right" />
                                 </div>
                               )}
                             </div>
-                            <div className={`w-full md:w-1/2 pl-[70px] md:pl-12 relative ${isEven ? 'mt-8 md:mt-0' : ''} ${!isEven ? 'order-1 md:order-2' : ''}`}>
+                            <div className={`w-1/2 pl-12 relative ${isEven ? 'mt-0' : ''} ${!isEven ? 'order-2' : ''}`}>
                               {!isEven ? (
-                                <div className="w-full aspect-[4/3] bg-white border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] overflow-hidden relative group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-700 z-10 flex items-center justify-center p-2">
-                                  {item.image ? <img src={item.image} alt={item.project} className="w-full h-full object-contain transition-transform duration-700" /> : <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg"><ImageIcon size={40} className="text-slate-300 opacity-30 group-hover:text-blue-500 group-hover:opacity-100 transition-colors duration-500" /></div>}
+                                <div className="w-full aspect-[16/9] bg-white border border-slate-200 shadow-[0_12px_34px_rgba(15,23,42,0.08)] overflow-hidden relative group-hover:border-blue-200 group-hover:shadow-[0_22px_48px_rgba(15,23,42,0.14)] group-hover:-translate-y-2 transition-all duration-700 z-10 flex items-center justify-center p-2">
+                                  {item.image ? <img src={item.image} alt={item.project} className={`w-full h-full transition-transform duration-700 ${item.id === 6 ? 'object-cover object-top' : 'object-contain'}`} /> : <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg"><ImageIcon size={40} className="text-slate-300 opacity-30 group-hover:text-blue-500 group-hover:opacity-100 transition-colors duration-500" /></div>}
                                 </div>
                               ) : (
-                                <div className="flex flex-col items-start text-left pt-2 md:pt-4 w-full min-w-0">
-                                  <div className="relative flex items-center w-full justify-start mb-4 md:mb-5">
-                                    <div className="hidden md:block absolute left-[-48px] w-10 h-px bg-slate-300 group-hover:bg-blue-500 transition-colors duration-500"></div>
-                                    <div className="hidden md:block absolute left-[-53px] w-2.5 h-2.5 border-2 border-slate-300 bg-white rounded-full group-hover:border-blue-500 transition-colors duration-500 z-10"></div>
-                                    <span className="text-slate-500 font-bold text-[11px] md:text-[12px] tracking-[0.2em] uppercase">{item.period}</span>
-                                  </div>
-                                  <span className="text-[11px] md:text-[12px] font-medium text-slate-400 italic mb-2 block font-serif">{item.company}</span>
-                                  <h4 className={`font-light uppercase text-slate-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full ${item.project.length > 14 ? 'text-xl md:text-2xl lg:text-3xl tracking-wider' : 'text-2xl md:text-3xl lg:text-4xl tracking-widest'}`}>{item.project}</h4>
-                                  <div className="mb-4 md:mb-5"><span className="text-[8.5px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] inline-block bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100/50">{item.spec}</span></div>
-                                  <p className="text-[13px] md:text-[14px] text-slate-500 leading-relaxed font-medium max-w-[320px]">{item.desc}</p>
+                                <div className="flex flex-col items-start text-left pt-4 w-full min-w-0">
+                                  <HistoryTextBlock item={item} align="left" />
                                 </div>
                               )}
                             </div>
@@ -511,44 +658,33 @@ const App = () => {
             <section className="h-full w-full flex flex-col pt-24 md:pt-28 overflow-hidden">
               <div ref={methodScrollRef} className="flex-grow overflow-y-auto scrollbar-hide flex flex-col">
                 <div className="flex-grow px-8 md:px-12 lg:px-16">
-                  <div className={`max-w-[1300px] mx-auto pb-20 pt-8 md:pt-12`}>
-                    <div className="space-y-3 text-center">
+                  <div className={`max-w-[1300px] mx-auto pb-20 pt-8 md:pt-12 design-layout-root`}>
+                    <div className="space-y-3 text-center w-full">
                       <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">Design Philosophy</span>
                       <h3 className="text-4xl md:text-5xl font-light text-slate-900 uppercase tracking-widest leading-none">How I Approach Design</h3>
                     </div>
-                    
-                    {/* 상단 여백 보장 Spacer (90px) */}
+
+                    {/* 상단 여백 (Spacer) */}
                     <div className="hidden md:block" style={{ height: 'var(--tabs-gap)' }}></div>
                     <div className="md:hidden h-12"></div>
 
                     <div className="relative w-full flex flex-col items-center">
-                      {/* 탭 영역: items-end로 정렬하여 본문 박스와 완벽 밀착 */}
-                      <div className="flex items-end justify-center gap-2 md:gap-4 px-4 w-full max-w-[950px] mx-auto -mb-[1px]" style={{ position: 'relative', zIndex: 50 }}>
+                      <div className="design-tabs-container">
                         {['level', 'combat', 'content'].map((tabId, idx) => {
                           const isActive = activeDesignTab === tabId;
                           return (
                             <button 
                               key={tabId} 
                               onClick={() => setActiveDesignTab(tabId)} 
-                              className={`hover-trigger flex flex-col items-center justify-center transition-all duration-300 relative px-2 ${
+                              className={`custom-tab-btn hover-trigger flex flex-col items-center justify-center transition-all duration-300 relative px-2 ${
                                 isActive 
                                 ? 'bg-white text-slate-900 rounded-t-[2.5rem] border-t border-l border-r border-slate-100 shadow-[0_-15px_30px_rgba(0,0,0,0.03)]' 
                                 : 'bg-transparent text-slate-400 hover:text-slate-600 rounded-t-[2.5rem] border border-transparent hover:bg-white/50'
                               }`}
-                              style={{ 
-                                width: 'var(--tab-width)', 
-                                height: 'var(--tab-height)', 
-                                flex: '0 0 var(--tab-width)', 
-                                zIndex: isActive ? 51 : 40 
-                              }}
+                              style={{ zIndex: isActive ? 51 : 40 }}
                             >
-                              {/* 활성 탭 하단 경계선 덮개 */}
-                              {isActive && <div className="absolute left-0 right-0 bg-white" style={{ bottom: '-1px', height: '2.5px', zIndex: 52 }}></div>}
-                              
-                              <span 
-                                style={{ animationDelay: `${idx * 0.1}s` }} 
-                                className={`pudding-target flex-col gap-1.5 w-full ${designIntroActive ? 'animate-design-intro-jelly' : ''}`}
-                              >
+                              {isActive && <div className="tab-active-mask"></div>}
+                              <span style={{ animationDelay: `${idx * 0.1}s` }} className={`pudding-target flex-col gap-1.5 w-full ${designIntroActive ? 'animate-design-intro-jelly' : ''}`}>
                                 <div className={`transition-transform duration-300 ${isActive ? 'scale-110 text-blue-600' : 'scale-100 opacity-60'}`}>
                                   {tabId === 'level' ? <Layers size={18} strokeWidth={isActive ? 2.5 : 1.5} /> : tabId === 'combat' ? <Swords size={18} strokeWidth={isActive ? 2.5 : 1.5} /> : <Clock size={18} strokeWidth={isActive ? 2.5 : 1.5} />}
                                 </div>
@@ -561,20 +697,13 @@ const App = () => {
                         })}
                       </div>
                       
-                      {/* 본문 콘텐츠 박스 */}
                       <div key={activeDesignTab} className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-slate-100 animate-reveal w-full relative" style={{ zIndex: 10 }}>
                         <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
                           <div className="md:col-span-7 space-y-10">
                             <div className="space-y-4">
-                              <h4 className="text-2xl md:text-3xl font-serif italic text-slate-500/80 tracking-tight leading-tight font-normal">
-                                {currentDesign.title}
-                              </h4>
-                              <p className="text-[16px] md:text-[17px] font-serif italic text-blue-600/70 block mt-1 mb-6">
-                                {currentDesign.subtitle}
-                              </p>
-                              <p className="text-[15px] text-slate-500 leading-relaxed font-medium max-w-2xl whitespace-pre-wrap">
-                                {currentDesign.thinking}
-                              </p>
+                              <h4 className="text-2xl md:text-3xl font-serif italic text-slate-500/80 tracking-tight leading-tight font-normal">{currentDesign.title}</h4>
+                              <p className="text-[16px] md:text-[17px] font-serif italic text-blue-600/70 block mt-1 mb-6">{currentDesign.subtitle}</p>
+                              <p className="text-[15px] text-slate-500 leading-relaxed font-medium max-w-2xl whitespace-pre-wrap">{currentDesign.thinking}</p>
                             </div>
                             <div className="pt-8 border-t border-slate-100">
                               <h5 className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.4em] mb-6">Core Principles</h5>
@@ -586,9 +715,7 @@ const App = () => {
                                       <span className="text-[13px] font-bold text-blue-600 opacity-60 leading-none">{p.num}</span>
                                       <div className="text-[13px] font-bold tracking-widest uppercase text-slate-900 leading-tight">{p.title}</div>
                                     </div>
-                                    <p className="text-[13px] text-slate-500 leading-relaxed font-medium whitespace-pre-wrap sm:flex-grow">
-                                      {p.text}
-                                    </p>
+                                    <p className="text-[13px] text-slate-500 leading-relaxed font-medium whitespace-pre-wrap sm:flex-grow">{p.text}</p>
                                   </div>
                                 ))}
                               </div>
@@ -611,8 +738,12 @@ const App = () => {
                             </div>
                           </div>
                         </div>
+
+                        {/* 복구된 '적용 사례' 섹션 */}
                         <div className="pt-8 md:pt-12 mt-8 md:mt-12 border-t border-slate-100">
-                          <h5 className="text-[12px] font-bold text-slate-300 uppercase tracking-[0.4em] mb-6 px-2 flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>적용 사례</h5>
+                          <h5 className="text-[12px] font-bold text-slate-300 uppercase tracking-[0.4em] mb-6 px-2 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>적용 사례
+                          </h5>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {currentDesign.appliedCases.map((caseItem, idx) => (
                               <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({ title: caseItem.project, desc: caseItem.desc, image: caseItem.image, isDesignCase: true })}>
@@ -623,6 +754,7 @@ const App = () => {
                             ))}
                           </div>
                         </div>
+
                       </div>
                     </div>
                   </div>
@@ -712,7 +844,7 @@ const App = () => {
                 <h4 className="text-3xl md:text-5xl font-light uppercase tracking-widest text-slate-900 mb-10">{selectedProject.title}</h4>
                 <div className="space-y-6">
                   <h5 className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.4em] border-b border-slate-100 pb-2">Task Details</h5>
-                  {selectedProject.projectName ? <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium">{selectedProject.desc} <br/><br/>해당 작업에서 달성한 주요 성과와 문제 해결 과정에 대한 상세 설명입니다.</p> : <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium">{selectedProject.desc} <br/><br/>기획 의도에 맞춘 핵심 시스템을 설계하고 데이터 검증을 통해 밸런스를 조율했습니다.</p>}
+                  <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium">{selectedProject.desc}</p>
                 </div>
                 {selectedProject.isDesignCase && selectedProject.image && <div className="mt-10 mb-4 w-full flex justify-center items-center bg-slate-50 rounded-2xl border border-slate-100 p-4"><img src={selectedProject.image} alt={selectedProject.title} className="max-w-full h-auto rounded-xl shadow-sm object-contain" style={{ maxHeight: '500px' }} /></div>}
                 <div className="mt-12 pt-8 border-t border-slate-100"><button onClick={() => setSelectedProject(null)} className="w-full py-5 bg-slate-900 text-white rounded-2xl text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 transition-all">Close Detail</button></div>
