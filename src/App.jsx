@@ -83,45 +83,42 @@ const HISTORY_ITEMS = [
 const DESIGN_DATA = {
   level: {
     title: "Level Design", 
-    subtitle: "공간은 질문을 던지고, 플레이어는 답을 찾아간다",
-    thinking: "레벨 디자인은 정답을 알려주는 일이 아니라, 플레이어가 공간을 관찰하고, 가능성을 비교하며, 자신의 방식으로 길을 완성하게 만드는 설계다.",
+    subtitle: "공간은 질문을 던지고, 플레이어는 답을 선택한다",
+    thinking: "레벨 디자인은 길을 가르쳐주는 것이 아니라,\n공간이 전하는 이야기와 감정의 흐름을 따라가며, 규칙과 가능성 안에서 자신만의 길을 완성하게 설계하는 것이다.",
     principles: [
-      { num: "01", title: "읽히는 공간", text: "조명, 실루엣, 지형의 흐름으로 플레이어가 가야 할 방향과 머물 이유를 읽는다." }, 
-      { num: "02", title: "경험과 감정", text: "숨막히는 어둠속 공포, 까마득한 낭떠러지의 긴장감, 경험과 감정의 높낮이를 만든다." }, 
-      { num: "03", title: "발견의 의미", text: "숨겨진 루트와 환경의 단서, 위험 너머의 선택과 결과로 의도된 경험을 완성한다." }
-    ],
-    caseStudy: { project: "Project Horizon", desc: "자연광 유도 구조로 탐험의 재미를 극대화했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "87%", lab: "Comp. Rate" }, { val: "4.8", lab: "Rating" }] },
-    appliedCases: [
-      { project: "적용 사례 1", desc: "레벨 디자인 적용 사례 1에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
+      { num: "01", title: "공간의 이야기", text: "공간의 서사와 지형의 흐름으로 나아갈 방향과 머물 이유를 시각적으로 이야기한다." }, 
+      { num: "02", title: "규칙과 전투", text: "선명한 규칙과 전투 구조 속에서 다양한 선택과 결과가 플레이 경험으로 이어진다." }, 
+      { num: "03", title: "탐험과 의외성", text: "숨겨진 길과 예상 밖의 사건, 강적과 보상의 발견으로 탐험의 긴장과 재미를 만든다." }
+    ],    caseStudy: { project: "카잔 레벨 디자인 예시", desc: "자연광 유도 구조로 탐험의 재미를 극대화했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "87%", lab: "Comp. Rate" }, { val: "4.8", lab: "Rating" }] },
+        appliedCases: [
+      { project: "Kritika Level Design", desc: "컨셉 기반 플레이 시나리오 기획 및 레벨 제작.", detailTitle: "Kritika Level Design", detailDesc: "A. 플레이 시나리오 컨셉 기획\n\n플레이 시나리오 제작 이유 = 일반 스테이지의 단순하고 반복적인 플레이 패턴을 탈피시키고 새로움을 전한다.\n\n- 해당 스테이지의 중심 컨셉에 어울리는 요소들을 뽑는다.\n- 뽑아진 아이디어는 정리하여 어떤 것들을 스테이지에 적용할 지 정한다.\n- 컨셉에서 나온 키워드를 대략적인 레벨 디자인을 진행한다.", detailLayout: "levelScenario", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
       { project: "적용 사례 2", desc: "레벨 디자인 적용 사례 2에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
       { project: "적용 사례 3", desc: "레벨 디자인 적용 사례 3에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" }
     ]
   },
   combat: {
     title: "Combat Design", 
-    subtitle: "프레임에 담긴 타격의 미학",
-    thinking: "전투 기획은 정밀한 수치와 감각적인 피드백의 조화입니다. 히트스톱, 카메라 쉐이크의 수치적 조절을 시각적으로 최적화합니다.",
+    subtitle: "적은 플레이어를 막는 벽이 아니라, 살아 있는 위협이다",
+    thinking: "전투 디자인은 단순히 강한 적을 만드는 것이 아니라,\n목적과 본능을 가진 살아 있는 위협을 설계하고, 플레이어가 자신만의 방법으로 돌파하게 만드는 것이다.",
     principles: [
-      { num: "01", title: "Impact Feedback", text: "시청각 피드백 극대화 설계 및 타격감의 정밀 조정." }, 
-      { num: "02", title: "Combat Rhythm", text: "공방의 템포를 통한 긴장감 구현과 리듬감 있는 전투 경험." }, 
-      { num: "03", title: "Balance Logic", text: "리스크와 리턴의 정교한 밸런싱을 통한 전략적 깊이 형성." }
-    ],
-    caseStudy: { project: "The Vanshee", desc: "언리얼4 프레임 데이터를 활용한 액션 동기화를 구현했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "92%", lab: "Satisfaction" }, { val: "0.01s", lab: "Accuracy" }] },
-    appliedCases: [
+      { num: "01", title: "존재의 언어", text: "현실의 생명감을 이어가는 자세, 움직임, 패턴으로 몬스터를 살아 있는 존재로 만들어낸다." }, 
+      { num: "02", title: "대응의 규칙", text: "세밀하고 선명한 전조와 공격의 리듬, 분명한 빈틈을 통해 읽고 대응할 수 있는 전투를 만든다." }, 
+      { num: "03", title: "숙련과 돌파", text: "패턴을 이해하고 빈틈을 파고들수록 위협은 공략 대상으로 바뀌고, 승리는 플레이어의 실력으로 남는다." }
+    ],    caseStudy: { project: "전투 디자인에 대한 이해", desc: "언리얼4 프레임 데이터를 활용한 액션 동기화를 구현했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "92%", lab: "Satisfaction" }, { val: "0.01s", lab: "Accuracy" }] },
+        appliedCases: [
       { project: "전투 적용 사례 1", desc: "전투 시스템 적용 사례 1에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
       { project: "전투 적용 사례 2", desc: "전투 시스템 적용 사례 2에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" }
     ]
   },
   content: {
     title: "Content Design", 
-    subtitle: "지속 가능한 재미의 순환",
-    thinking: "콘텐츠는 유저가 게임에 머무를 명분을 제공합니다. 보상 심리와 성장 루프를 정교하게 설계하여 장기 리텐션을 확보합니다.",
+    subtitle: "콘텐츠는 플레이어의 시간을 경험으로 바꾸는 설계다",
+    thinking: "콘텐츠 디자인은 플레이어에게 단순한 과제를 주는 것이 아니라,\n도전과 보상, 성장과 발견을 연결해 플레이한 시간이 의미 있는 경험으로 남게 만드는 것이다.",
     principles: [
-      { num: "01", title: "Progression Loop", text: "노력이 성과로 이어지는 구조와 성장의 체감 극대화." }, 
-      { num: "02", title: "Reward Psychology", text: "기대와 보상의 배치를 통한 유저의 지속적인 동기부여." }, 
-      { num: "03", title: "Economy Sink", text: "지속 가능한 재화 순환 모델 구축 및 인플레이션 방지." }
-    ],
-    caseStudy: { project: "Arisia", desc: "오픈월드 수집형 RPG 코어 루프 설계. 유저 유형별 시뮬레이션으로 경제 안정을 달성했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "1.2M", lab: "Active User" }, { val: "Stable", lab: "Economy" }] },
+      { num: "01", title: "플레이의 목적", text: "퀘스트, 미션, 수집, 도전마다 플레이어가 움직여야 할 이유와 도달해야 할 목적을 만든다." }, 
+      { num: "02", title: "경험의 밀도", text: "짧은 행동에도 발견, 선택, 보상이 이어지도록 콘텐츠의 밀도를 설계한다." }, 
+      { num: "03", title: "성장의 연결", text: "콘텐츠를 완료한 결과가 캐릭터, 실력, 이해도, 다음 목표로 자연스럽게 이어지게 한다." }
+    ],    caseStudy: { project: "Arisia", desc: "오픈월드 수집형 RPG 코어 루프 설계. 유저 유형별 시뮬레이션으로 경제 안정을 달성했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "1.2M", lab: "Active User" }, { val: "Stable", lab: "Economy" }] },
     appliedCases: [
       { project: "콘텐츠 적용 사례 1", desc: "콘텐츠 구조 적용 사례 1에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" }
     ]
@@ -206,7 +203,7 @@ const HistoryTextBlock = memo(({ item, align = 'left' }) => {
 
       <div className={`${scaleOrigin} scale-75`}>
         {item.project && (
-          <h4 className="font-light text-black text-[52px] leading-[0.82] tracking-normal whitespace-nowrap mb-[15px]">
+          <h4 className="font-serif italic font-normal text-black text-[40px] leading-tight tracking-tight whitespace-nowrap mb-[15px]">
             {item.project}
           </h4>
         )}
@@ -425,7 +422,6 @@ const App = () => {
               flex-direction: column;
               align-items: center;
               width: 100%;
-              padding-top: 10px;
             }
 
             .design-tabs-container {
@@ -574,6 +570,7 @@ const App = () => {
                     <div className="text-center space-y-4 mb-16">
                        <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">Experience Timeline</span>
                        <h3 className="text-5xl font-light text-slate-900 uppercase tracking-widest leading-none whitespace-nowrap">History</h3>
+                       <p className="text-[16px] font-light text-slate-400 tracking-[0.12em]">기획의 깊이를 더해온 지난 시간들의 기록입니다.</p>
                     </div>
                     <div className="max-w-[1000px] mx-auto mb-32 hidden md:block px-4 mt-8">
                       <div className="relative flex justify-between items-start w-full">
@@ -658,10 +655,11 @@ const App = () => {
             <section className="h-full w-full flex flex-col pt-24 md:pt-28 overflow-hidden">
               <div ref={methodScrollRef} className="flex-grow overflow-y-auto scrollbar-hide flex flex-col">
                 <div className="flex-grow px-8 md:px-12 lg:px-16">
-                  <div className={`max-w-[1300px] mx-auto pb-20 pt-8 md:pt-12 design-layout-root`}>
-                    <div className="space-y-3 text-center w-full">
-                      <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">Design Philosophy</span>
-                      <h3 className="text-4xl md:text-5xl font-light text-slate-900 uppercase tracking-widest leading-none">How I Approach Design</h3>
+                  <div className={`max-w-[1300px] mx-auto pb-20 pt-12 design-layout-root`}>
+                    <div className="space-y-4 text-center w-full">
+                      <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.5em]">Core Principles</span>
+                      <h3 className="text-4xl md:text-5xl font-light text-slate-900 uppercase tracking-widest leading-none">Design Philosophy</h3>
+                      <p className="mb-6 text-[16px] font-light text-slate-400 tracking-[0.12em]">게임 디자인에 대한 관점입니다.</p>
                     </div>
 
                     {/* 상단 여백 (Spacer) */}
@@ -676,19 +674,25 @@ const App = () => {
                             <button 
                               key={tabId} 
                               onClick={() => setActiveDesignTab(tabId)} 
-                              className={`custom-tab-btn hover-trigger flex flex-col items-center justify-center transition-all duration-300 relative px-2 ${
+                              className={`custom-tab-btn ${isActive ? 'is-active' : ''} hover-trigger flex flex-col items-center justify-center transition-all duration-300 relative px-2 ${
                                 isActive 
-                                ? 'bg-white text-slate-900 rounded-t-[2.5rem] border-t border-l border-r border-slate-100 shadow-[0_-15px_30px_rgba(0,0,0,0.03)]' 
+                                ? 'bg-white text-slate-900 rounded-t-[3rem] border-t border-l border-r border-slate-100 shadow-[0_-15px_30px_rgba(0,0,0,0.03)]' 
                                 : 'bg-transparent text-slate-400 hover:text-slate-600 rounded-t-[2.5rem] border border-transparent hover:bg-white/50'
                               }`}
                               style={{ zIndex: isActive ? 51 : 40 }}
                             >
+                              {isActive && (
+                                <>
+                                  <div className="absolute -top-11 left-1/2 z-[-1] h-24 w-24 -translate-x-1/2 rounded-full bg-white shadow-[0_-14px_28px_rgba(0,0,0,0.025)]"></div>
+                                  <div className="absolute -top-3 left-1/2 z-[-1] h-10 w-28 -translate-x-1/2 bg-white"></div>
+                                </>
+                              )}
                               {isActive && <div className="tab-active-mask"></div>}
                               <span style={{ animationDelay: `${idx * 0.1}s` }} className={`pudding-target flex-col gap-1.5 w-full ${designIntroActive ? 'animate-design-intro-jelly' : ''}`}>
-                                <div className={`transition-transform duration-300 ${isActive ? 'scale-110 text-blue-600' : 'scale-100 opacity-60'}`}>
+                                <div className={`transition-transform duration-300 ${isActive ? 'scale-110 -translate-y-3 text-blue-600' : 'scale-100 opacity-60'}`}>
                                   {tabId === 'level' ? <Layers size={18} strokeWidth={isActive ? 2.5 : 1.5} /> : tabId === 'combat' ? <Swords size={18} strokeWidth={isActive ? 2.5 : 1.5} /> : <Clock size={18} strokeWidth={isActive ? 2.5 : 1.5} />}
                                 </div>
-                                <span className={`text-[13px] sm:text-[16px] md:text-[21px] uppercase tracking-[0.05em] font-bold whitespace-nowrap transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}>
+                                <span className={`text-[13px] sm:text-[16px] md:text-[21px] uppercase tracking-[0.05em] font-light whitespace-nowrap transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}>
                                   {tabId} Design
                                 </span>
                               </span>
@@ -746,7 +750,7 @@ const App = () => {
                           </h5>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {currentDesign.appliedCases.map((caseItem, idx) => (
-                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({ title: caseItem.project, desc: caseItem.desc, image: caseItem.image, isDesignCase: true })}>
+                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({ title: caseItem.detailTitle || caseItem.project, desc: caseItem.detailDesc || caseItem.desc, image: caseItem.image, detailLayout: caseItem.detailLayout, isDesignCase: true })}>
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-[50px] rounded-full group-hover:bg-blue-600/10 transition-colors duration-500"></div>
                                 <h4 className="text-xl font-light uppercase tracking-widest mb-3 leading-tight text-slate-900">{caseItem.project}</h4>
                                 <p className="text-slate-500 text-[13.5px] leading-relaxed font-medium relative z-10">{caseItem.desc}</p>
@@ -836,17 +840,93 @@ const App = () => {
         {selectedProject && (
           <div className="absolute inset-0 z-[200] flex items-center justify-center p-4 md:p-6 animate-reveal">
             <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setSelectedProject(null)}></div>
-            <div className="bg-white w-full max-w-4xl rounded-[3rem] shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]">
+            <div className={`bg-white w-full ${selectedProject.detailLayout === 'levelScenario' ? 'max-w-[920px] rounded-[1.5rem]' : 'max-w-4xl rounded-[3rem]'} shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]`}>
               <button onClick={() => setSelectedProject(null)} className="absolute top-6 right-6 p-3 bg-white/80 backdrop-blur-md hover:bg-white rounded-full transition-colors shadow-sm z-50"><X size={20} className="text-slate-900"/></button>
               {!selectedProject.isDesignCase && <div className="relative w-full h-48 md:h-64 bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">{selectedProject.image ? <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" /> : <ImageIcon size={64} className="text-slate-300" />}</div>}
-              <div className="p-8 md:p-14 overflow-y-auto scrollbar-hide flex-grow">
-                <div className="flex flex-wrap items-center gap-3 mb-6 pr-12"><span className="text-[9px] font-bold text-slate-400 bg-slate-50 border border-slate-100/50 px-3 py-1.5 rounded-md uppercase tracking-[0.2em]">{selectedProject.disciplineLabel || selectedProject.categoryLabel || 'Case Study'}</span>{selectedProject.projectName && <span className="text-[13px] font-serif italic text-slate-400 border-l border-slate-200 pl-3">{selectedProject.projectName}</span>}</div>
-                <h4 className="text-3xl md:text-5xl font-light uppercase tracking-widest text-slate-900 mb-10">{selectedProject.title}</h4>
-                <div className="space-y-6">
-                  <h5 className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.4em] border-b border-slate-100 pb-2">Task Details</h5>
-                  <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium">{selectedProject.desc}</p>
-                </div>
-                {selectedProject.isDesignCase && selectedProject.image && <div className="mt-10 mb-4 w-full flex justify-center items-center bg-slate-50 rounded-2xl border border-slate-100 p-4"><img src={selectedProject.image} alt={selectedProject.title} className="max-w-full h-auto rounded-xl shadow-sm object-contain" style={{ maxHeight: '500px' }} /></div>}
+              <div className={`${selectedProject.detailLayout === 'levelScenario' ? 'px-6 pb-6 pt-12 md:px-9 md:pb-9 md:pt-16' : 'p-8 md:p-14'} overflow-y-auto scrollbar-hide flex-grow`}>
+                {selectedProject.detailLayout === 'levelScenario' ? (
+                  <div className="bg-white text-slate-700">
+                    <div className="relative h-[5.75rem] md:h-[6.75rem] mb-8 border-b border-slate-100">
+                      <div className="absolute left-1/2 bottom-[-1px] -translate-x-1/2 w-[320px] md:w-[420px] h-[76px] md:h-[88px] bg-white rounded-t-[4rem] shadow-[0_-10px_35px_rgba(15,23,42,0.05)] flex flex-col items-center justify-end pb-5">
+                        <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center -mt-12 mb-2 relative z-20">
+                          <Layers size={18} className="text-blue-600" strokeWidth={2.5} />
+                        </div>
+                        <div className="text-[18px] md:text-[22px] font-light uppercase tracking-[0.08em] text-slate-900 leading-none whitespace-nowrap">Level Design</div>
+                      </div>
+                    </div>
+
+                    <header className="mb-7 md:mb-8 pr-12">
+                      <div className="flex items-start gap-4 md:gap-5">
+                        <span className="text-4xl md:text-5xl leading-none font-light text-blue-600/80 mt-1">1</span>
+                        <div>
+                          <span className="block text-[10px] font-bold tracking-[0.28em] text-slate-300 mb-2">크리티카 레벨 디자인</span>
+                          <p className="mt-3 text-[15px] md:text-[18px] font-serif italic text-blue-600/70 leading-tight">
+                            {'기획의도를 통한 레벨 디자인'}
+                          </p>
+                        </div>
+                      </div>
+                    </header>
+
+                    <section className="mb-6 md:mb-7 pl-0 md:pl-8">
+                      <h5 className="text-lg md:text-xl font-bold text-slate-700 mb-2">{'A. 플레이 시나리오 컨셉 기획'}</h5>
+                      <p className="text-[13px] md:text-[15px] leading-relaxed text-slate-600 font-medium max-w-5xl mb-4">
+                        {'플레이 시나리오 제작 이유 = 일반 스테이지의 단순하고 반복적인 플레이 패턴을 탈피시키고 새로움을 전한다.'}
+                      </p>
+                      <ul className="space-y-1 text-[13px] md:text-[14px] leading-relaxed text-slate-500 font-medium">
+                        <li>{'- 해당 스테이지의 중심 컨셉에 어울리는 요소들을 뽑는다.'}</li>
+                        <li>{'- 뽑아진 아이디어는 정리하여 어떤 것들을 스테이지에 적용할 지 정한다.'}</li>
+                        <li>{'- 컨셉에서 나온 키워드를 대략적인 레벨 디자인을 진행한다.'}</li>
+                      </ul>
+                    </section>
+
+                    <section className="grid md:grid-cols-[1fr_40px_2.15fr] gap-3 md:gap-4 items-center mb-5 md:mb-6">
+                      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">{'스테이지 컨셉'}</div>
+                        <div className="p-4 md:p-4 text-[12px] md:text-[14px] text-slate-700 font-semibold leading-relaxed whitespace-nowrap">
+                          <span className="inline-flex px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 font-bold mr-1">{'해적들의 소굴'}</span>
+                          <span>{'보물이 숨겨진 섬.'}</span>
+                        </div>
+                      </div>
+
+                      <div className="hidden md:flex items-center justify-center">
+                        <div className="h-px w-full bg-slate-200 relative">
+                          <span className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 border-t border-r border-slate-300 rotate-45"></span>
+                        </div>
+                      </div>
+
+                      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">{'컨셉 상황 설정'}</div>
+                        <div className="divide-y divide-slate-100 text-[12px] md:text-[13px] leading-snug text-slate-600 font-medium">
+                          <p className="p-2.5 md:p-3 bg-blue-50/70 text-slate-800"><b>{'1. 어드벤처'}</b>{' : 다양한 퍼즐적 요소, 혹은 다양한 장치가 필요. (ex: 점프 벽올라가기)'}</p>
+                          <p className="p-2.5 md:p-3"><b>{'2. 성장형 재미'}</b>{' : 순서에 상관없이 재미를 통한 우회로.'}</p>
+                          <p className="p-2.5 md:p-3"><b>{'3. 시야'}</b>{' : 몬스터의 시야를 조절한 플레이 패턴 유도.'}</p>
+                          <p className="p-2.5 md:p-3 bg-blue-50/70 text-slate-800"><b>{'4. 탈출'}</b>{' : 준비된 함정을 탈출하는 형태의 플레이 유도.'}</p>
+                          <p className="p-2.5 md:p-3"><b>{'5. 보물'}</b>{' : 플레이어의 수집 감성을 자극. RPG팀 협의 우선.'}</p>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="grid md:grid-cols-2 gap-3 md:gap-4 rounded-2xl border border-slate-200 bg-white p-3 md:p-4 shadow-sm">
+                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300">
+                        <ImageIcon size={40} />
+                        <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">Sketch Image</span>
+                      </div>
+                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300">
+                        <ImageIcon size={40} />
+                        <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">Level Screenshot</span>
+                      </div>
+                    </section>
+                  </div>                ) : (
+                  <>
+                    <div className="flex flex-wrap items-center gap-3 mb-6 pr-12"><span className="text-[9px] font-bold text-slate-400 bg-slate-50 border border-slate-100/50 px-3 py-1.5 rounded-md uppercase tracking-[0.2em]">{selectedProject.disciplineLabel || selectedProject.categoryLabel || 'Case Study'}</span>{selectedProject.projectName && <span className="text-[13px] font-serif italic text-slate-400 border-l border-slate-200 pl-3">{selectedProject.projectName}</span>}</div>
+                    <h4 className="text-3xl md:text-5xl font-light uppercase tracking-widest text-slate-900 mb-10">{selectedProject.title}</h4>
+                    <div className="space-y-6">
+                      <h5 className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.4em] border-b border-slate-100 pb-2">Task Details</h5>
+                      <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium whitespace-pre-wrap">{selectedProject.desc}</p>
+                    </div>
+                    {selectedProject.isDesignCase && selectedProject.image && <div className="mt-10 mb-4 w-full flex justify-center items-center bg-slate-50 rounded-2xl border border-slate-100 p-4"><img src={selectedProject.image} alt={selectedProject.title} className="max-w-full h-auto rounded-xl shadow-sm object-contain" style={{ maxHeight: '500px' }} /></div>}
+                  </>
+                )}
                 <div className="mt-12 pt-8 border-t border-slate-100"><button onClick={() => setSelectedProject(null)} className="w-full py-5 bg-slate-900 text-white rounded-2xl text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 transition-all">Close Detail</button></div>
               </div>
             </div>
