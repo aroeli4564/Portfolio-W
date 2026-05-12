@@ -82,21 +82,139 @@ const HISTORY_ITEMS = [
 
 const DESIGN_DATA = {
   level: {
-    title: "Level Design", 
-    subtitle: "공간은 질문을 던지고, 플레이어는 답을 선택한다",
-    thinking: "레벨 디자인은 길을 가르쳐주는 것이 아니라,\n공간이 전하는 이야기와 감정의 흐름을 따라가며, 규칙과 가능성 안에서 자신만의 길을 완성하게 설계하는 것이다.",
-    principles: [
-      { num: "01", title: "공간의 이야기", text: "공간의 서사와 지형의 흐름으로 나아갈 방향과 머물 이유를 시각적으로 이야기한다." }, 
-      { num: "02", title: "규칙과 전투", text: "선명한 규칙과 전투 구조 속에서 다양한 선택과 결과가 플레이 경험으로 이어진다." }, 
-      { num: "03", title: "탐험과 의외성", text: "숨겨진 길과 예상 밖의 사건, 강적과 보상의 발견으로 탐험의 긴장과 재미를 만든다." }
-    ],    caseStudy: { project: "카잔 레벨 디자인 예시", desc: "자연광 유도 구조로 탐험의 재미를 극대화했습니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown", metrics: [{ val: "87%", lab: "Comp. Rate" }, { val: "4.8", lab: "Rating" }] },
-        appliedCases: [
-      { project: "Kritika Level Design", desc: "컨셉 기반 플레이 시나리오 기획 및 레벨 제작.", detailTitle: "Kritika Level Design", detailDesc: "A. 플레이 시나리오 컨셉 기획\n\n플레이 시나리오 제작 이유 = 일반 스테이지의 단순하고 반복적인 플레이 패턴을 탈피시키고 새로움을 전한다.\n\n- 해당 스테이지의 중심 컨셉에 어울리는 요소들을 뽑는다.\n- 뽑아진 아이디어는 정리하여 어떤 것들을 스테이지에 적용할 지 정한다.\n- 컨셉에서 나온 키워드를 대략적인 레벨 디자인을 진행한다.", detailLayout: "levelScenario", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
-      { project: "적용 사례 2", desc: "레벨 디자인 적용 사례 2에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" },
-      { project: "적용 사례 3", desc: "레벨 디자인 적용 사례 3에 대한 상세 설명이 들어갑니다.", image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown" }
-    ]
+  title: "Level Design", 
+  subtitle: "공간은 질문을 던지고, 플레이어는 답을 선택한다",
+  thinking: "레벨 디자인은 길을 가르쳐주는 것이 아니라,\n공간이 전하는 이야기와 감정의 흐름을 따라가며, 규칙과 가능성 안에서 자신만의 길을 완성하게 설계하는 것이다.",
+  principles: [
+    { num: "01", title: "공간의 이야기", text: "공간의 서사와 지형의 흐름으로 나아갈 방향과 머물 이유를 시각적으로 이야기한다." }, 
+    { num: "02", title: "규칙과 전투", text: "선명한 규칙과 전투 구조 속에서 다양한 선택과 결과가 플레이 경험으로 이어진다." }, 
+    { num: "03", title: "탐험과 의외성", text: "숨겨진 길과 예상 밖의 사건, 강적과 보상의 발견으로 탐험의 긴장과 재미를 만든다." }
+  ],
+  caseStudy: {
+    project: "카잔 레벨 디자인 예시",
+    desc: "자연광 유도 구조로 탐험의 재미를 극대화했습니다.",
+    image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown",
+    metrics: [{ val: "87%", lab: "Comp. Rate" }, { val: "4.8", lab: "Rating" }],
+
+    detailLayout: "levelScenario",
+    caseNumber: "0",
+    detailEyebrow: "대표 사례",
+    detailTitle: "Khazan Level Design",
+    detailSubtitle: "대표 사례 레벨 디자인",
+    sectionTitle: "A. 대표 사례 구성 의도",
+    sectionIntro: "대표 사례에 대한 설명이 들어갑니다. 현재는 임시 내용이며, 이후 실제 사례 내용으로 교체하면 됩니다.",
+    bullets: [
+      "레벨의 핵심 의도와 플레이 흐름을 정리한다.",
+      "공간 구조, 전투 배치, 탐험 동선을 연결한다.",
+      "플레이어가 어떤 경험을 하도록 설계했는지 설명한다."
+    ],
+    conceptTitle: "스테이지 컨셉",
+    conceptKeyword: "대표 사례",
+    conceptText: "대표 레벨 디자인 사례",
+    situationTitle: "컨셉 상황 설정",
+    situationItems: [
+      ["01", "목적", "플레이어가 이 공간에서 무엇을 해야 하는지 명확히 한다."],
+      ["02", "동선", "시야와 지형을 통해 자연스럽게 이동 방향을 유도한다."],
+      ["03", "전투", "공간 구조와 적 배치가 전투 경험으로 이어지게 한다."],
+      ["04", "탐험", "보상과 발견을 통해 탐험 동기를 만든다."],
+      ["05", "결과", "공간을 통과한 뒤 남는 경험을 정리한다."]
+    ],
+    imageLabels: ["Sketch Image", "Level Screenshot"]
   },
-  combat: {
+  appliedCases: [
+    {
+      project: "Kritika Level Design",
+      desc: "컨셉 기반 플레이 시나리오 기획 및 레벨 제작.",
+      image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown",
+
+      detailLayout: "levelScenario",
+      caseNumber: "1",
+      detailEyebrow: "크리티카 레벨 디자인",
+      detailTitle: "Kritika Level Design",
+      detailSubtitle: "기획의도를 통한 레벨 디자인",
+      sectionTitle: "A. 플레이 시나리오 컨셉 기획",
+      sectionIntro: "플레이 시나리오 제작 이유 = 일반 스테이지의 단순하고 반복적인 플레이 패턴을 탈피시키고 새로움을 전한다.",
+      bullets: [
+        "해당 스테이지의 중심 컨셉에 어울리는 요소들을 뽑는다.",
+        "뽑아진 아이디어는 정리하여 어떤 것들을 스테이지에 적용할 지 정한다.",
+        "컨셉에서 나온 키워드를 대략적인 레벨 디자인으로 연결한다."
+      ],
+      conceptTitle: "스테이지 컨셉",
+      conceptKeyword: "해적들의 소굴",
+      conceptText: "보물이 숨겨진 섬.",
+      situationTitle: "컨셉 상황 설정",
+      situationItems: [
+        ["01", "어드벤처", "다양한 퍼즐적 요소, 혹은 다양한 장치가 필요."],
+        ["02", "성장형 재미", "순서에 상관없이 재미를 통한 우회로."],
+        ["03", "시야", "몬스터의 시야를 조절한 플레이 패턴 유도."],
+        ["04", "탈출", "준비된 함정을 탈출하는 형태의 플레이 유도."],
+        ["05", "보물", "플레이어의 수집 감성을 자극. RPG팀 협의 우선."]
+      ],
+      imageLabels: ["Sketch Image", "Level Screenshot"]
+    },
+    {
+      project: "적용 사례 2",
+      desc: "레벨 디자인 적용 사례 2에 대한 상세 설명이 들어갑니다.",
+      image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown",
+
+      detailLayout: "levelScenario",
+      caseNumber: "2",
+      detailEyebrow: "레벨 디자인 적용 사례",
+      detailTitle: "Level Design Case 02",
+      detailSubtitle: "임시 상세 페이지",
+      sectionTitle: "A. 설계 의도",
+      sectionIntro: "적용 사례 2의 상세 설명이 들어갈 영역입니다. 현재는 임시 내용입니다.",
+      bullets: [
+        "공간의 목적을 정의한다.",
+        "플레이어의 이동 흐름을 설계한다.",
+        "전투, 탐험, 보상을 하나의 경험으로 연결한다."
+      ],
+      conceptTitle: "스테이지 컨셉",
+      conceptKeyword: "임시 컨셉",
+      conceptText: "상세 내용 입력 예정",
+      situationTitle: "컨셉 상황 설정",
+      situationItems: [
+        ["01", "목적", "임시 설명이 들어갑니다."],
+        ["02", "동선", "임시 설명이 들어갑니다."],
+        ["03", "전투", "임시 설명이 들어갑니다."],
+        ["04", "탐험", "임시 설명이 들어갑니다."],
+        ["05", "보상", "임시 설명이 들어갑니다."]
+      ],
+      imageLabels: ["Sketch Image", "Level Screenshot"]
+    },
+    {
+      project: "적용 사례 3",
+      desc: "레벨 디자인 적용 사례 3에 대한 상세 설명이 들어갑니다.",
+      image: "https://res-console.cloudinary.com/dfgvfwodg/thumbnails/v1/image/upload/v1777440653/TGV2ZWxfRVhfMV9udmZ5emo=/drilldown",
+
+      detailLayout: "levelScenario",
+      caseNumber: "3",
+      detailEyebrow: "레벨 디자인 적용 사례",
+      detailTitle: "Level Design Case 03",
+      detailSubtitle: "임시 상세 페이지",
+      sectionTitle: "A. 설계 의도",
+      sectionIntro: "적용 사례 3의 상세 설명이 들어갈 영역입니다. 현재는 임시 내용입니다.",
+      bullets: [
+        "핵심 플레이 경험을 정리한다.",
+        "공간의 흐름과 시야 유도를 설계한다.",
+        "플레이 결과가 다음 목표로 이어지게 만든다."
+      ],
+      conceptTitle: "스테이지 컨셉",
+      conceptKeyword: "임시 컨셉",
+      conceptText: "상세 내용 입력 예정",
+      situationTitle: "컨셉 상황 설정",
+      situationItems: [
+        ["01", "목적", "임시 설명이 들어갑니다."],
+        ["02", "구조", "임시 설명이 들어갑니다."],
+        ["03", "위험", "임시 설명이 들어갑니다."],
+        ["04", "선택", "임시 설명이 들어갑니다."],
+        ["05", "결과", "임시 설명이 들어갑니다."]
+      ],
+      imageLabels: ["Sketch Image", "Level Screenshot"]
+    }
+  ]
+},
+    combat: {
     title: "Combat Design", 
     subtitle: "적은 플레이어를 막는 벽이 아니라, 살아 있는 위협이다",
     thinking: "전투 디자인은 단순히 강한 적을 만드는 것이 아니라,\n목적과 본능을 가진 살아 있는 위협을 설계하고, 플레이어가 자신만의 방법으로 돌파하게 만드는 것이다.",
@@ -726,7 +844,12 @@ const App = () => {
                             </div>
                           </div>
                           <div className="md:col-span-5 space-y-6">
-                            <div className="bg-slate-50/50 rounded-[3rem] p-10 border border-slate-100 relative overflow-hidden group cursor-pointer hover:bg-white hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" onClick={() => setSelectedProject({ title: currentDesign.caseStudy.project, desc: currentDesign.caseStudy.desc, image: currentDesign.caseStudy.image, isDesignCase: true })}>
+                            <div className="bg-slate-50/50 rounded-[3rem] p-10 border border-slate-100 relative overflow-hidden group cursor-pointer hover:bg-white hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" onClick={() => setSelectedProject({
+                                ...currentDesign.caseStudy,
+                                title: currentDesign.caseStudy.detailTitle || currentDesign.caseStudy.project,
+                                desc: currentDesign.caseStudy.sectionIntro || currentDesign.caseStudy.desc,
+                                isDesignCase: true
+                              })}>
                               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/5 blur-[80px] rounded-full"></div>
                               <span className="inline-flex items-center gap-2 px-3 py-1 bg-white shadow-sm text-slate-400 text-[10px] font-bold rounded-md mb-6 uppercase tracking-[0.2em] border border-slate-100/50">대표 사례</span>
                               <h4 className="text-2xl font-light uppercase tracking-widest mb-6 leading-tight text-slate-900">{currentDesign.caseStudy.project}</h4>
@@ -750,7 +873,12 @@ const App = () => {
                           </h5>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {currentDesign.appliedCases.map((caseItem, idx) => (
-                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({ title: caseItem.detailTitle || caseItem.project, desc: caseItem.detailDesc || caseItem.desc, image: caseItem.image, detailLayout: caseItem.detailLayout, isDesignCase: true })}>
+                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({
+                                  ...caseItem,
+                                  title: caseItem.detailTitle || caseItem.project,
+                                  desc: caseItem.detailDesc || caseItem.desc,
+                                  isDesignCase: true
+                                })}>
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-[50px] rounded-full group-hover:bg-blue-600/10 transition-colors duration-500"></div>
                                 <h4 className="text-xl font-light uppercase tracking-widest mb-3 leading-tight text-slate-900">{caseItem.project}</h4>
                                 <p className="text-slate-500 text-[13.5px] leading-relaxed font-medium relative z-10">{caseItem.desc}</p>
@@ -840,9 +968,25 @@ const App = () => {
         {selectedProject && (
           <div className="absolute inset-0 z-[200] flex items-center justify-center p-4 md:p-6 animate-reveal">
             <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setSelectedProject(null)}></div>
+
             <div className={`bg-white w-full ${selectedProject.detailLayout === 'levelScenario' ? 'max-w-[920px] rounded-[1.5rem]' : 'max-w-4xl rounded-[3rem]'} shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]`}>
-              <button onClick={() => setSelectedProject(null)} className="absolute top-6 right-6 p-3 bg-white/80 backdrop-blur-md hover:bg-white rounded-full transition-colors shadow-sm z-50"><X size={20} className="text-slate-900"/></button>
-              {!selectedProject.isDesignCase && <div className="relative w-full h-48 md:h-64 bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">{selectedProject.image ? <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" /> : <ImageIcon size={64} className="text-slate-300" />}</div>}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-6 right-6 p-3 bg-white/80 backdrop-blur-md hover:bg-white rounded-full transition-colors shadow-sm z-50"
+              >
+                <X size={20} className="text-slate-900" />
+              </button>
+
+              {!selectedProject.isDesignCase && (
+                <div className="relative w-full h-48 md:h-64 bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">
+                  {selectedProject.image ? (
+                    <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <ImageIcon size={64} className="text-slate-300" />
+                  )}
+                </div>
+              )}
+
               <div className={`${selectedProject.detailLayout === 'levelScenario' ? 'px-6 pb-6 pt-12 md:px-9 md:pb-9 md:pt-16' : 'p-8 md:p-14'} overflow-y-auto scrollbar-hide flex-grow`}>
                 {selectedProject.detailLayout === 'levelScenario' ? (
                   <div className="bg-white text-slate-700">
@@ -851,40 +995,56 @@ const App = () => {
                         <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center -mt-12 mb-2 relative z-20">
                           <Layers size={18} className="text-blue-600" strokeWidth={2.5} />
                         </div>
-                        <div className="text-[18px] md:text-[22px] font-light uppercase tracking-[0.08em] text-slate-900 leading-none whitespace-nowrap">Level Design</div>
+                        <div className="text-[18px] md:text-[22px] font-light uppercase tracking-[0.08em] text-slate-900 leading-none whitespace-nowrap">
+                          {selectedProject.detailTitle || selectedProject.title || "Level Design"}
+                        </div>
                       </div>
                     </div>
 
                     <header className="mb-7 md:mb-8 pr-12">
                       <div className="flex items-start gap-4 md:gap-5">
-                        <span className="text-4xl md:text-5xl leading-none font-light text-blue-600/80 mt-1">1</span>
+                        <span className="text-4xl md:text-5xl leading-none font-light text-blue-600/80 mt-1">
+                          {selectedProject.caseNumber || "1"}
+                        </span>
                         <div>
-                          <span className="block text-[10px] font-bold tracking-[0.28em] text-slate-300 mb-2">크리티카 레벨 디자인</span>
+                          <span className="block text-[10px] font-bold tracking-[0.28em] text-slate-300 mb-2">
+                            {selectedProject.detailEyebrow || selectedProject.project || "레벨 디자인 사례"}
+                          </span>
                           <p className="mt-3 text-[15px] md:text-[18px] font-serif italic text-blue-600/70 leading-tight">
-                            {'기획의도를 통한 레벨 디자인'}
+                            {selectedProject.detailSubtitle || "레벨 디자인 상세 페이지"}
                           </p>
                         </div>
                       </div>
                     </header>
 
                     <section className="mb-6 md:mb-7 pl-0 md:pl-8">
-                      <h5 className="text-lg md:text-xl font-bold text-slate-700 mb-2">{'A. 플레이 시나리오 컨셉 기획'}</h5>
+                      <h5 className="text-lg md:text-xl font-bold text-slate-700 mb-2">
+                        {selectedProject.sectionTitle || "A. 설계 의도"}
+                      </h5>
                       <p className="text-[13px] md:text-[15px] leading-relaxed text-slate-600 font-medium max-w-5xl mb-4">
-                        {'플레이 시나리오 제작 이유 = 일반 스테이지의 단순하고 반복적인 플레이 패턴을 탈피시키고 새로움을 전한다.'}
+                        {selectedProject.sectionIntro || "상세 설명이 들어갈 영역입니다."}
                       </p>
                       <ul className="space-y-1 text-[13px] md:text-[14px] leading-relaxed text-slate-500 font-medium">
-                        <li>{'- 해당 스테이지의 중심 컨셉에 어울리는 요소들을 뽑는다.'}</li>
-                        <li>{'- 뽑아진 아이디어는 정리하여 어떤 것들을 스테이지에 적용할 지 정한다.'}</li>
-                        <li>{'- 컨셉에서 나온 키워드를 대략적인 레벨 디자인을 진행한다.'}</li>
+                        {(selectedProject.bullets || [
+                          "임시 설명이 들어갑니다.",
+                          "임시 설명이 들어갑니다.",
+                          "임시 설명이 들어갑니다."
+                        ]).map((text, index) => (
+                          <li key={index}>- {text}</li>
+                        ))}
                       </ul>
                     </section>
 
                     <section className="grid md:grid-cols-[1fr_40px_2.15fr] gap-3 md:gap-4 items-center mb-5 md:mb-6">
                       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">{'스테이지 컨셉'}</div>
+                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">
+                          {selectedProject.conceptTitle || "스테이지 컨셉"}
+                        </div>
                         <div className="p-4 md:p-4 text-[12px] md:text-[14px] text-slate-700 font-semibold leading-relaxed whitespace-nowrap">
-                          <span className="inline-flex px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 font-bold mr-1">{'해적들의 소굴'}</span>
-                          <span>{'보물이 숨겨진 섬.'}</span>
+                          <span className="inline-flex px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 font-bold mr-1">
+                            {selectedProject.conceptKeyword || "임시 컨셉"}
+                          </span>
+                          <span>{selectedProject.conceptText || "상세 내용 입력 예정"}</span>
                         </div>
                       </div>
 
@@ -895,39 +1055,83 @@ const App = () => {
                       </div>
 
                       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">{'컨셉 상황 설정'}</div>
-                        <div className="divide-y divide-slate-100 text-[12px] md:text-[13px] leading-snug text-slate-600 font-medium">
-                          <p className="p-2.5 md:p-3 bg-blue-50/70 text-slate-800"><b>{'1. 어드벤처'}</b>{' : 다양한 퍼즐적 요소, 혹은 다양한 장치가 필요. (ex: 점프 벽올라가기)'}</p>
-                          <p className="p-2.5 md:p-3"><b>{'2. 성장형 재미'}</b>{' : 순서에 상관없이 재미를 통한 우회로.'}</p>
-                          <p className="p-2.5 md:p-3"><b>{'3. 시야'}</b>{' : 몬스터의 시야를 조절한 플레이 패턴 유도.'}</p>
-                          <p className="p-2.5 md:p-3 bg-blue-50/70 text-slate-800"><b>{'4. 탈출'}</b>{' : 준비된 함정을 탈출하는 형태의 플레이 유도.'}</p>
-                          <p className="p-2.5 md:p-3"><b>{'5. 보물'}</b>{' : 플레이어의 수집 감성을 자극. RPG팀 협의 우선.'}</p>
+                        <div className="bg-slate-50 border-b border-slate-200 py-1.5 text-center text-[12px] md:text-[14px] font-bold text-slate-700">
+                          {selectedProject.situationTitle || "컨셉 상황 설정"}
+                        </div>
+                        <div className="divide-y divide-slate-100">
+                          {(selectedProject.situationItems || [
+                            ["01", "목적", "임시 설명이 들어갑니다."],
+                            ["02", "동선", "임시 설명이 들어갑니다."],
+                            ["03", "전투", "임시 설명이 들어갑니다."],
+                            ["04", "탐험", "임시 설명이 들어갑니다."],
+                            ["05", "보상", "임시 설명이 들어갑니다."]
+                          ]).map(([num, title, desc]) => (
+                            <div key={num} className="grid grid-cols-[118px_1fr] items-start gap-4 px-4 py-2">
+                              <div className="relative flex items-center gap-2 pr-5 pt-0.5 after:absolute after:right-0 after:top-0 after:h-5 after:w-px after:bg-blue-600">
+                                <span className="text-[13px] font-bold text-blue-500/75 leading-none">{num}</span>
+                                <span className="text-[13px] font-bold text-slate-900 leading-none whitespace-nowrap">{title}</span>
+                              </div>
+                              <p className="text-[12px] md:text-[13px] leading-relaxed text-slate-500 font-medium">{desc}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </section>
 
                     <section className="grid md:grid-cols-2 gap-3 md:gap-4 rounded-2xl border border-slate-200 bg-white p-3 md:p-4 shadow-sm">
-                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300">
-                        <ImageIcon size={40} />
-                        <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">Sketch Image</span>
+                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300 overflow-hidden">
+                        {selectedProject.sketchImage ? (
+                          <img src={selectedProject.sketchImage} alt="Sketch" className="w-full h-full object-cover" />
+                        ) : (
+                          <>
+                            <ImageIcon size={40} />
+                            <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">
+                              {(selectedProject.imageLabels && selectedProject.imageLabels[0]) || "Sketch Image"}
+                            </span>
+                          </>
+                        )}
                       </div>
-                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300">
-                        <ImageIcon size={40} />
-                        <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">Level Screenshot</span>
+
+                      <div className="aspect-[16/9] rounded-xl bg-slate-50 border border-slate-100 flex flex-col items-center justify-center text-slate-300 overflow-hidden">
+                        {selectedProject.levelImage ? (
+                          <img src={selectedProject.levelImage} alt="Level Screenshot" className="w-full h-full object-cover" />
+                        ) : (
+                          <>
+                            <ImageIcon size={40} />
+                            <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em]">
+                              {(selectedProject.imageLabels && selectedProject.imageLabels[1]) || "Level Screenshot"}
+                            </span>
+                          </>
+                        )}
                       </div>
                     </section>
-                  </div>                ) : (
-                  <>
-                    <div className="flex flex-wrap items-center gap-3 mb-6 pr-12"><span className="text-[9px] font-bold text-slate-400 bg-slate-50 border border-slate-100/50 px-3 py-1.5 rounded-md uppercase tracking-[0.2em]">{selectedProject.disciplineLabel || selectedProject.categoryLabel || 'Case Study'}</span>{selectedProject.projectName && <span className="text-[13px] font-serif italic text-slate-400 border-l border-slate-200 pl-3">{selectedProject.projectName}</span>}</div>
-                    <h4 className="text-3xl md:text-5xl font-light uppercase tracking-widest text-slate-900 mb-10">{selectedProject.title}</h4>
-                    <div className="space-y-6">
-                      <h5 className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.4em] border-b border-slate-100 pb-2">Task Details</h5>
-                      <p className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium whitespace-pre-wrap">{selectedProject.desc}</p>
+                  </div>
+                ) : (
+                  <div className="space-y-8">
+                    <div>
+                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.35em]">
+                        Detail View
+                      </span>
+                      <h4 className="text-3xl md:text-4xl font-light uppercase tracking-widest text-slate-900 mt-3 mb-4">
+                        {selectedProject.title}
+                      </h4>
+                      <p className="text-slate-500 text-[15px] leading-relaxed font-medium whitespace-pre-wrap">
+                        {selectedProject.desc || "상세 설명이 들어갑니다."}
+                      </p>
                     </div>
-                    {selectedProject.isDesignCase && selectedProject.image && <div className="mt-10 mb-4 w-full flex justify-center items-center bg-slate-50 rounded-2xl border border-slate-100 p-4"><img src={selectedProject.image} alt={selectedProject.title} className="max-w-full h-auto rounded-xl shadow-sm object-contain" style={{ maxHeight: '500px' }} /></div>}
-                  </>
+
+                    <div className="rounded-[2rem] bg-slate-50 border border-slate-100 p-10 flex items-center justify-center text-slate-300 min-h-[240px]">
+                      {selectedProject.image ? (
+                        <img src={selectedProject.image} alt={selectedProject.title} className="max-w-full max-h-[420px] object-contain" />
+                      ) : (
+                        <div className="flex flex-col items-center">
+                          <ImageIcon size={56} />
+                          <span className="mt-4 text-[10px] font-bold uppercase tracking-[0.28em]">No Image</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 )}
-                <div className="mt-12 pt-8 border-t border-slate-100"><button onClick={() => setSelectedProject(null)} className="w-full py-5 bg-slate-900 text-white rounded-2xl text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 transition-all">Close Detail</button></div>
               </div>
             </div>
           </div>
