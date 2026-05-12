@@ -9,5 +9,92 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (() => {
+        const addKhazanHistoryInfo = () => {
+          const historyItem = document.getElementById('history-item-1');
+          if (!historyItem || historyItem.querySelector('[data-khazan-extra-info="true"]')) return;
+
+          const title = Array.from(historyItem.querySelectorAll('h4, h5')).find((element) =>
+            element.textContent.trim().includes('The First Khazan')
+          );
+          if (!title || !title.parentElement) return;
+
+          const parent = title.parentElement;
+          const alignRight = parent.className.includes('items-end');
+          const specBadge = Array.from(parent.querySelectorAll('span')).find((element) =>
+            element.textContent.trim().includes('PC(STEAM)')
+          );
+          const companyText = Array.from(parent.querySelectorAll('span')).find((element) =>
+            element.textContent.trim() === 'Neople'
+          );
+
+          const role = document.createElement(companyText ? companyText.tagName.toLowerCase() : 'span');
+          role.setAttribute('data-khazan-extra-info', 'true');
+          role.textContent = 'Level / Combat Design';
+          if (companyText) {
+            role.className = companyText.className;
+            role.style.cssText = companyText.getAttribute('style') || '';
+          } else {
+            role.style.cssText = [
+              'display:block',
+              'font-family:serif',
+              'font-style:italic',
+              'font-size:12px',
+              'font-weight:500',
+              'color:#94a3b8',
+              'margin-bottom:8px'
+            ].join(';');
+          }
+
+          const live = document.createElement(specBadge ? specBadge.tagName.toLowerCase() : 'span');
+          live.setAttribute('data-khazan-extra-info', 'true');
+          live.textContent = 'CBT / Live Service';
+          if (specBadge) {
+            live.className = specBadge.className;
+            live.style.cssText = specBadge.getAttribute('style') || '';
+          } else {
+            live.style.cssText = [
+              'display:inline-flex',
+              'align-items:center',
+              'background:#f8fafc',
+              'border:1px solid #f1f5f9',
+              'border-radius:8px',
+              'padding:8px 14px',
+              'font-size:11px',
+              'font-weight:800',
+              'letter-spacing:0.2em',
+              'text-transform:uppercase',
+              'color:#94a3b8',
+              'line-height:1'
+            ].join(';');
+          }
+
+          if (companyText) {
+            companyText.insertAdjacentElement('afterend', role);
+          } else {
+            title.insertAdjacentElement('beforebegin', role);
+          }
+
+          if (specBadge) {
+            specBadge.insertAdjacentElement('afterend', live);
+          } else {
+            title.insertAdjacentElement('afterend', live);
+          }
+
+          if (alignRight) {
+            role.style.textAlign = 'right';
+            live.style.alignSelf = 'flex-end';
+          }
+        };
+
+        window.addEventListener('DOMContentLoaded', addKhazanHistoryInfo);
+        window.addEventListener('load', addKhazanHistoryInfo);
+
+        const root = document.getElementById('root') || document.body;
+        const observer = new MutationObserver(addKhazanHistoryInfo);
+        observer.observe(root, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>
