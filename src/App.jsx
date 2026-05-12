@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
+import { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { 
   User, History as HistoryIcon, Lightbulb, Cpu, Gamepad2, Layers, 
   Swords, Mail, ArrowUpRight, ChevronDown, Image as ImageIcon, Clock, X, Send
@@ -363,6 +363,7 @@ const App = () => {
   const [worksActiveTab, setWorksActiveTab] = useState('all');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isProjectModalClosing, setIsProjectModalClosing] = useState(false);
   
   const [navIntroActive, setNavIntroActive] = useState(true);
   const [designIntroActive, setDesignIntroActive] = useState(false);
@@ -372,6 +373,7 @@ const App = () => {
   const methodScrollRef = useRef(null);
   const worksScrollRef = useRef(null);
   const scrollBufferRef = useRef({ direction: 0, count: 0 });
+  const projectModalCloseTimerRef = useRef(null);
 
   const moveSection = useCallback((index) => {
     if (isScrolling) return;
@@ -389,6 +391,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    return () => clearTimeout(projectModalCloseTimerRef.current);
+  }, []);
+
+  useEffect(() => {
     if (currentSection === 2) {
       const startTimer = setTimeout(() => setDesignIntroActive(true), 500);
       const stopTimer = setTimeout(() => setDesignIntroActive(false), 2500);
@@ -396,9 +402,9 @@ const App = () => {
         clearTimeout(startTimer);
         clearTimeout(stopTimer);
       };
-    } else {
-      setDesignIntroActive(false);
     }
+    const resetTimer = setTimeout(() => setDesignIntroActive(false), 0);
+    return () => clearTimeout(resetTimer);
   }, [currentSection]);
 
   const handleWheel = useCallback((e) => {
@@ -475,6 +481,22 @@ const App = () => {
     }
   };
 
+  const openSelectedProject = useCallback((project) => {
+    clearTimeout(projectModalCloseTimerRef.current);
+    setIsProjectModalClosing(false);
+    setSelectedProject(project);
+  }, []);
+
+  const closeSelectedProject = useCallback(() => {
+    if (isProjectModalClosing) return;
+    clearTimeout(projectModalCloseTimerRef.current);
+    setIsProjectModalClosing(true);
+    projectModalCloseTimerRef.current = setTimeout(() => {
+      setSelectedProject(null);
+      setIsProjectModalClosing(false);
+    }, 500);
+  }, [isProjectModalClosing]);
+
   const currentDesign = DESIGN_DATA[activeDesignTab];
 
   return (
@@ -494,6 +516,31 @@ const App = () => {
             }
             .animate-reveal {
               animation: slide-up-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            }
+            @keyframes modal-slide-reveal {
+              from { transform: translateY(20px); }
+              to { transform: translateY(0); }
+            }
+            @keyframes modal-slide-hide {
+              0% { opacity: 1; transform: translateY(0) scale(1); }
+              35% { opacity: 0.96; transform: translateY(3px) scale(0.999); }
+              70% { opacity: 0.55; transform: translateY(16px) scale(0.997); }
+              100% { opacity: 0; transform: translateY(30px) scale(0.995); }
+            }
+            @keyframes modal-backdrop-hide {
+              0% { opacity: 1; }
+              35% { opacity: 0.96; }
+              70% { opacity: 0.55; }
+              100% { opacity: 0; }
+            }
+            .animate-modal-reveal {
+              animation: modal-slide-reveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            }
+            .animate-modal-hide {
+              animation: modal-slide-hide 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+            }
+            .animate-modal-backdrop-hide {
+              animation: modal-backdrop-hide 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
             }
             @keyframes jelly-double {
               0%, 50%, 100% { transform: scale(1, 1); }
@@ -844,7 +891,7 @@ const App = () => {
                             </div>
                           </div>
                           <div className="md:col-span-5 space-y-6">
-                            <div className="bg-slate-50/50 rounded-[3rem] p-10 border border-slate-100 relative overflow-hidden group cursor-pointer hover:bg-white hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" onClick={() => setSelectedProject({
+                            <div className="bg-slate-50/50 rounded-[3rem] p-10 border border-slate-100 relative overflow-hidden group cursor-pointer hover:bg-white hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" onClick={() => openSelectedProject({
                                 ...currentDesign.caseStudy,
                                 title: currentDesign.caseStudy.detailTitle || currentDesign.caseStudy.project,
                                 desc: currentDesign.caseStudy.sectionIntro || currentDesign.caseStudy.desc,
@@ -873,7 +920,7 @@ const App = () => {
                           </h5>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {currentDesign.appliedCases.map((caseItem, idx) => (
-                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => setSelectedProject({
+                              <div key={idx} className="bg-slate-50/50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:bg-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onClick={() => openSelectedProject({
                                   ...caseItem,
                                   title: caseItem.detailTitle || caseItem.project,
                                   desc: caseItem.detailDesc || caseItem.desc,
@@ -923,7 +970,7 @@ const App = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
                       {WORKS_DATA.filter(work => { if (worksViewMode === 'project') return worksActiveTab === 'all' || work.projectId === worksActiveTab; return worksActiveTab === 'all' || work.disciplineId === worksActiveTab; }).map((work) => (
-                        <div key={work.id} onClick={() => setSelectedProject(work)} className="bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group cursor-pointer overflow-hidden flex flex-col">
+                        <div key={work.id} onClick={() => openSelectedProject(work)} className="bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group cursor-pointer overflow-hidden flex flex-col">
                           <div className={`w-full aspect-[4/3] bg-slate-50 relative overflow-hidden flex items-center justify-center`}>
                             {work.image ? <img src={work.image} alt={work.title} className="w-full h-full object-cover" /> : <ImageIcon size={48} className="text-slate-300" />}
                             <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500"></div>
@@ -966,12 +1013,12 @@ const App = () => {
         )}
 
         {selectedProject && (
-          <div className="absolute inset-0 z-[200] flex items-center justify-center p-4 md:p-6 animate-reveal">
-            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setSelectedProject(null)}></div>
+          <div className="absolute inset-0 z-[200] flex items-center justify-center p-4 md:p-6">
+            <div className={`absolute inset-0 bg-slate-900/60 backdrop-blur-sm ${isProjectModalClosing ? 'animate-modal-backdrop-hide' : ''}`} onClick={closeSelectedProject}></div>
 
-            <div className={`bg-white w-full ${selectedProject.detailLayout === 'levelScenario' ? 'max-w-[920px] rounded-[1.5rem]' : 'max-w-4xl rounded-[3rem]'} shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]`}>
+            <div className={`${isProjectModalClosing ? 'animate-modal-hide' : 'animate-modal-reveal'} bg-white w-full ${selectedProject.detailLayout === 'levelScenario' ? 'max-w-[1040px] rounded-[1.5rem]' : 'max-w-4xl rounded-[3rem]'} shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]`}>
               <button
-                onClick={() => setSelectedProject(null)}
+                onClick={closeSelectedProject}
                 className="absolute top-6 right-6 p-3 bg-white/80 backdrop-blur-md hover:bg-white rounded-full transition-colors shadow-sm z-50"
               >
                 <X size={20} className="text-slate-900" />
@@ -987,21 +1034,31 @@ const App = () => {
                 </div>
               )}
 
-              <div className={`${selectedProject.detailLayout === 'levelScenario' ? 'px-6 pb-6 pt-12 md:px-9 md:pb-9 md:pt-16' : 'p-8 md:p-14'} overflow-y-auto scrollbar-hide flex-grow`}>
+              <div className={`${selectedProject.detailLayout === 'levelScenario' ? 'px-9 pb-6 pt-6 md:px-[54px] md:pb-9 md:pt-8' : 'p-8 md:p-14'} overflow-y-auto scrollbar-hide flex-grow`}>
                 {selectedProject.detailLayout === 'levelScenario' ? (
                   <div className="bg-white text-slate-700">
-                    <div className="relative h-[5.75rem] md:h-[6.75rem] mb-8 border-b border-slate-100">
-                      <div className="absolute left-1/2 bottom-[-1px] -translate-x-1/2 w-[320px] md:w-[420px] h-[76px] md:h-[88px] bg-white rounded-t-[4rem] shadow-[0_-10px_35px_rgba(15,23,42,0.05)] flex flex-col items-center justify-end pb-5">
-                        <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center -mt-12 mb-2 relative z-20">
+                    <div className="relative mb-10 border-b border-slate-100 pt-20 text-center">
+                      <div className="relative mx-auto flex h-[132px] w-full max-w-[585px] flex-col items-center justify-center rounded-t-[4rem] bg-white shadow-[0_-16px_45px_rgba(15,23,42,0.045)]">
+                        <div className="absolute left-1/2 top-0 z-0 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_-16px_45px_rgba(15,23,42,0.045)]"></div>
+                        <div className="absolute left-1/2 top-0 z-[1] h-12 w-40 -translate-x-1/2 bg-white"></div>
+                        <div className="absolute left-1/2 top-0 z-[2] flex h-10 w-10 -translate-x-1/2 -translate-y-8 items-center justify-center">
                           <Layers size={18} className="text-blue-600" strokeWidth={2.5} />
                         </div>
-                        <div className="text-[18px] md:text-[22px] font-light uppercase tracking-[0.08em] text-slate-900 leading-none whitespace-nowrap">
-                          {selectedProject.detailTitle || selectedProject.title || "Level Design"}
+                        <div className="relative z-10 flex -translate-y-0.5 flex-col items-center px-8">
+                          <span className="mb-1.5 block text-[11px] font-bold tracking-[0.36em] text-slate-300">
+                            {selectedProject.detailEyebrow || selectedProject.project || "레벨 디자인 사례"}
+                          </span>
+                          <div className="text-[31px] md:text-[39px] font-serif italic text-slate-500/80 tracking-tight leading-[0.95] whitespace-nowrap">
+                            {selectedProject.detailTitle || selectedProject.title || "Level Design"}
+                          </div>
+                          <p className="mt-4 text-[12px] md:text-[15px] font-serif italic text-blue-600/70 leading-tight">
+                            {selectedProject.detailSubtitle || "레벨 디자인 상세 페이지"}
+                          </p>
                         </div>
                       </div>
                     </div>
 
-                    <header className="mb-7 md:mb-8 pr-12">
+                    <header className="hidden">
                       <div className="flex items-start gap-4 md:gap-5">
                         <span className="text-4xl md:text-5xl leading-none font-light text-blue-600/80 mt-1">
                           {selectedProject.caseNumber || "1"}
