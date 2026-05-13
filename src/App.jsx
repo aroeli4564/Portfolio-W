@@ -494,7 +494,7 @@ const App = () => {
     projectModalCloseTimerRef.current = setTimeout(() => {
       setSelectedProject(null);
       setIsProjectModalClosing(false);
-    }, 500);
+    }, 280);
   }, [isProjectModalClosing]);
 
   const currentDesign = DESIGN_DATA[activeDesignTab];
@@ -523,24 +523,24 @@ const App = () => {
             }
             @keyframes modal-slide-hide {
               0% { opacity: 1; transform: translateY(0) scale(1); }
-              35% { opacity: 0.96; transform: translateY(3px) scale(0.999); }
-              70% { opacity: 0.55; transform: translateY(16px) scale(0.997); }
-              100% { opacity: 0; transform: translateY(30px) scale(0.995); }
+              15% { opacity: 0.78; transform: translateY(5px) scale(0.999); }
+              60% { opacity: 0.34; transform: translateY(18px) scale(0.997); }
+              100% { opacity: 0; transform: translateY(28px) scale(0.995); }
             }
             @keyframes modal-backdrop-hide {
               0% { opacity: 1; }
-              35% { opacity: 0.96; }
-              70% { opacity: 0.55; }
+              15% { opacity: 0.76; }
+              60% { opacity: 0.32; }
               100% { opacity: 0; }
             }
             .animate-modal-reveal {
               animation: modal-slide-reveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             }
             .animate-modal-hide {
-              animation: modal-slide-hide 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+              animation: modal-slide-hide 0.28s cubic-bezier(0.2, 0, 0.2, 1) forwards;
             }
             .animate-modal-backdrop-hide {
-              animation: modal-backdrop-hide 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+              animation: modal-backdrop-hide 0.28s cubic-bezier(0.2, 0, 0.2, 1) forwards;
             }
             @keyframes jelly-double {
               0%, 50%, 100% { transform: scale(1, 1); }
@@ -1013,8 +1013,8 @@ const App = () => {
         )}
 
         {selectedProject && (
-          <div className="absolute inset-0 z-[200] flex items-center justify-center p-4 md:p-6">
-            <div className={`absolute inset-0 bg-slate-900/60 backdrop-blur-sm ${isProjectModalClosing ? 'animate-modal-backdrop-hide' : ''}`} onClick={closeSelectedProject}></div>
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-6">
+            <div className={`fixed inset-0 bg-slate-900/60 backdrop-blur-sm ${isProjectModalClosing ? 'animate-modal-backdrop-hide' : ''}`} onClick={closeSelectedProject}></div>
 
             <div className={`${isProjectModalClosing ? 'animate-modal-hide' : 'animate-modal-reveal'} bg-white w-full ${selectedProject.detailLayout === 'levelScenario' ? 'max-w-[1040px] rounded-[1.5rem]' : 'max-w-4xl rounded-[3rem]'} shadow-2xl overflow-hidden relative z-10 flex flex-col max-h-[95vh] md:max-h-[90vh]`}>
               <button
